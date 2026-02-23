@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SMART Consulting Eng'g | High-End Structural Engineering</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6600",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#121212",
+                        "slate-gray": "#1E1E1E",
+                        "charcoal": "#181410",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .grid-pattern {
+            background-image: radial-gradient(rgba(255, 102, 0, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .wireframe-bg {
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.95)),
+                url('https://images.unsplash.com/photo-1503387762-592dee58c160?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-white">
+    <!-- Top Navigation -->
+    <nav class="sticky top-0 z-50 border-b border-primary/10 bg-background-dark/80 backdrop-blur-md px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img alt="SMART Consulting Engineering Corporate Logo" class="h-10 w-auto"
+                    data-alt="SMART Consulting Engineering professional orange and charcoal logo"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxb9Qth8-KyZSMMLEtlV8izRVMTp4rt1eY7lD6MlMUQ-IYOlTZhWHgkKJXxjX-HcmDMWasbwD7_uUas1b_d6YMhtZ3yuksOB_VDEQK8yzaq57SsmZVuvzAQF8QEyhJtKUHnWjeF7ed5UfH_MW_yKIzmXxhekFFdY5hbveGwyHClisS0d4Y7eXl7v4kc7Hm3EkOXElWSb4cwn9uN6add-wFfUWTfOb-RiEOQ5GoZ76tJU4Q6DqhFRV-rCLsHKC5AYK4LjVL2sEem0U" />
+                <span class="hidden md:block text-xs font-bold tracking-[0.2em] uppercase text-primary">Precision
+                    Engineering</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="index.html"
+                    class="hidden md:block text-sm font-medium text-primary border-b border-primary">Home</a>
+                <a href="services.html"
+                    class="hidden md:block text-sm font-medium hover:text-primary transition-colors">Services</a>
+                <a href="portfolio.html"
+                    class="hidden md:block text-sm font-medium hover:text-primary transition-colors">Portfolio</a>
+                <a href="consultation.html"
+                    class="hidden sm:block text-white bg-primary hover:bg-primary/90 px-5 py-2 rounded text-sm font-bold transition-all">
+                    Request a Consultation
+                </a>
+                <button id="mobile-menu-btn" class="p-1 md:hidden">
+                    <span class="material-symbols-outlined text-slate-100">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-background-dark/95 backdrop-blur-md border-b border-primary/20 px-4 py-6 shadow-2xl">
+            <div class="flex flex-col space-y-4 text-center">
+                <a href="index.html" class="text-white hover:text-primary transition-colors font-medium">Home</a>
+                <a href="services.html" class="text-white hover:text-primary transition-colors font-medium">Services</a>
+                <a href="portfolio.html"
+                    class="text-white hover:text-primary transition-colors font-medium">Portfolio</a>
+                <a href="consultation.html"
+                    class="inline-block mx-auto text-white bg-primary hover:bg-primary/90 px-6 py-3 rounded-full text-sm font-bold transition-all shadow-lg shadow-primary/20 mt-2">Request
+                    a Consultation</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex flex-col justify-center items-center overflow-hidden grid-pattern">
+        <!-- Blueprint Line Accents -->
+        <div class="absolute top-0 left-1/4 w-px h-full bg-primary/10"></div>
+        <div class="absolute top-0 right-1/4 w-px h-full bg-primary/10"></div>
+        <div class="absolute top-1/3 left-0 w-full h-px bg-primary/10"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 mb-8">
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </span>
+                <span class="text-[10px] uppercase tracking-widest font-bold text-primary">ISO 9001:2015
+                    Certified</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-black tracking-tighter mb-6 leading-[0.9]">
+                SMART <span class="text-primary">ENGINEERING.</span><br />
+                STRUCTURAL PRECISION.
+            </h1>
+            <p class="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl font-light leading-relaxed mb-10">
+                High-end industrial consulting and architectural wireframe excellence. We transform complex structural
+                challenges into elegant, resilient realities.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="consultation.html"
+                    class="bg-primary text-white font-bold py-4 px-10 rounded shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                    Start Your Project
+                </a>
+                <a href="portfolio.html"
+                    class="border border-slate-700 bg-slate-gray/50 backdrop-blur text-white font-bold py-4 px-10 rounded hover:bg-slate-700 transition-colors">
+                    View Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Services Grid -->
+    <section class="py-24 bg-charcoal relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <span class="text-primary font-bold tracking-widest text-xs uppercase">Core Competencies</span>
+                    <h2 class="text-4xl font-bold mt-2">Expert Industrial Services</h2>
+                </div>
+                <div class="h-px flex-1 bg-primary/20 mx-8 hidden md:block"></div>
+                <p class="text-slate-400 max-w-xs text-sm">Providing data-driven insights and structural integrity for
+                    the modern built environment.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Card 1 -->
+                <div
+                    class="group p-8 border border-slate-800 bg-background-dark hover:border-primary transition-all duration-500 rounded-lg">
+                    <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-500 inline-block">
+                        <span class="material-symbols-outlined text-4xl">architecture</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Structural Design</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Advanced beam and truss analysis utilizing
+                        high-fidelity computational modeling.</p>
+                    <div class="w-8 h-[2px] bg-primary/30 group-hover:w-full transition-all duration-500"></div>
+                </div>
+                <!-- Service Card 2 -->
+                <div
+                    class="group p-8 border border-slate-800 bg-background-dark hover:border-primary transition-all duration-500 rounded-lg">
+                    <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-500 inline-block">
+                        <span class="material-symbols-outlined text-4xl">account_tree</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Project Management</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Comprehensive Gantt-driven oversight ensuring
+                        timeline and budgetary compliance.</p>
+                    <div class="w-8 h-[2px] bg-primary/30 group-hover:w-full transition-all duration-500"></div>
+                </div>
+                <!-- Service Card 3 -->
+                <div
+                    class="group p-8 border border-slate-800 bg-background-dark hover:border-primary transition-all duration-500 rounded-lg">
+                    <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-500 inline-block">
+                        <span class="material-symbols-outlined text-4xl">analytics</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Feasibility Studies</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Data-driven document and graph studies to
+                        validate project viability at scale.</p>
+                    <div class="w-8 h-[2px] bg-primary/30 group-hover:w-full transition-all duration-500"></div>
+                </div>
+                <!-- Service Card 4 -->
+                <div
+                    class="group p-8 border border-slate-800 bg-background-dark hover:border-primary transition-all duration-500 rounded-lg">
+                    <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-500 inline-block">
+                        <span class="material-symbols-outlined text-4xl">construction</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Construction Supervision</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Professional on-site safety and quality
+                        control for mission-critical builds.</p>
+                    <div class="w-8 h-[2px] bg-primary/30 group-hover:w-full transition-all duration-500"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Trusted Excellence (Testimonials) -->
+    <section class="py-24 grid-pattern">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black mb-4">TRUSTED EXCELLENCE</h2>
+                <div class="flex justify-center gap-1 text-primary">
+                    <span class="material-symbols-outlined fill-1">star</span>
+                    <span class="material-symbols-outlined fill-1">star</span>
+                    <span class="material-symbols-outlined fill-1">star</span>
+                    <span class="material-symbols-outlined fill-1">star</span>
+                    <span class="material-symbols-outlined fill-1">star</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-slate-gray p-8 border-l-4 border-primary rounded-r-lg">
+                    <p class="italic text-slate-300 mb-6 font-light leading-relaxed">"The level of technical detail
+                        SMART brings to structural wireframing is unmatched in the industry today."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-slate-800 border border-primary/20 flex items-center justify-center font-bold text-primary">
+                            ZA</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Zeyinu Awol</h4>
+                            <p class="text-xs text-slate-500 uppercase tracking-tighter">Infrastructure Lead</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-slate-gray p-8 border-l-4 border-primary rounded-r-lg">
+                    <p class="italic text-slate-300 mb-6 font-light leading-relaxed">"Exceptional project management.
+                        They handled our most complex industrial feasibility study with surgical precision."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-slate-800 border border-primary/20 flex items-center justify-center font-bold text-primary">
+                            YG</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Yoseph G.</h4>
+                            <p class="text-xs text-slate-500 uppercase tracking-tighter">Principal Architect</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-slate-gray p-8 border-l-4 border-primary rounded-r-lg">
+                    <p class="italic text-slate-300 mb-6 font-light leading-relaxed">"Reliable construction supervision
+                        that prioritizes both safety and aesthetic excellence. Truly a modern partner."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-slate-800 border border-primary/20 flex items-center justify-center font-bold text-primary">
+                            FM</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Firehiwot Megersa</h4>
+                            <p class="text-xs text-slate-500 uppercase tracking-tighter">Real Estate Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Certification Strip -->
+    <section class="py-12 bg-background-dark border-y border-slate-800">
+        <div class="container mx-auto px-6">
+            <div
+                class="flex flex-wrap items-center justify-between gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+                <span class="text-xl font-black italic tracking-widest text-slate-100">ISO-9001</span>
+                <span class="text-xl font-black italic tracking-widest text-slate-100">BOARD-CERTIFIED</span>
+                <span class="text-xl font-black italic tracking-widest text-slate-100">OSHA-LEAD</span>
+                <span class="text-xl font-black italic tracking-widest text-slate-100">LEED-PLATINUM</span>
+                <span class="text-xl font-black italic tracking-widest text-slate-100">PMP-ALLIANCE</span>
+            </div>
+        </div>
+    </section>
+    <!-- Final CTA & Map Section -->
+    <section class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-primary/5"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="bg-slate-gray rounded-xl overflow-hidden border border-slate-800 flex flex-col md:flex-row">
+                <div class="p-12 md:w-1/2 flex flex-col justify-center">
+                    <h2 class="text-4xl font-black mb-6">READY TO BUILD THE FUTURE?</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Contact us today for a high-end consultation on your
+                        next industrial or architectural project. Our engineers are standing by.</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary">call</span>
+                            <span class="font-medium">+251 911 234 567</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary">mail</span>
+                            <span class="font-medium">contact@smartconsulting.com</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary">location_on</span>
+                            <span class="font-medium">Addis Ababa, Ethiopia</span>
+                        </div>
+                    </div>
+                    <a href="consultation.html"
+                        class="bg-primary text-white font-bold py-4 rounded text-center w-full uppercase tracking-widest shadow-xl shadow-primary/20 block">
+                        Request Consultation
+                    </a>
+                </div>
+                <div class="md:w-1/2 h-[400px] md:h-auto bg-slate-800">
+                    <img alt="Satellite map view of regional development project"
+                        class="w-full h-full object-cover opacity-60"
+                        data-alt="Satellite map view of the regional business district office location"
+                        data-location="Addis Ababa"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyrTbNoAEVmXUqllZ4iaH-d0MkZXBymoSrAolHQG5KWzAh6y0zENLMIiwSeDqBJlXMJzSpL_SILBLrn46KTZvpQhJu0wMOOkhq2XKKjyMYrT4Kx5WYOzQe2LwEgN-broPKuAXZzSnOGmA-aipTpMgh1Ir-q_rG08qwOd3x54v-eJeBPRhoLEdhDYp5vBioEVNTTzE5eeeJTPOGqX48c3MzWa2becvDGUMijQUUQNBwZW8j2h0sf4DsniOkCRbSJQq4dPmbOk4FvbI" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-background-dark py-12 border-t border-slate-800 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <img alt="Footer Logo" class="h-8 opacity-70"
+                    data-alt="SMART Consulting Engineering monochromatic footer logo"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVLfuAfrZ7FrnLCU8Fo0bdH3x5s2YMb81vmnT14dwTkFX5zEV6PRy1TiFkVz52Ul71kIuNd9dkgINqWvsghAnZsstKPiYWQfx1M6ffBPKhdhMfpvdy5ZJS22hQ-cyQ6k-Rvn0Rp648LqJaNIY4pM963SPIBL7sG3DfRN1CfoOjY8IcgWXvR_PBnbXdRaEug1DjSqUxcvKtt-BJD5t30C2RVO5DUszH4ZnHVa8moM8RS6I1cU-K4LmP--hdej1mvLpwIofV1KwGSJg" />
+                <div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-500">
+                    <a class="hover:text-primary transition-colors" href="index.html">Privacy Policy</a>
+                    <a class="hover:text-primary transition-colors" href="index.html">Terms of Service</a>
+                    <a class="hover:text-primary transition-colors" href="consultation.html">Career Portal</a>
+                </div>
+                <p class="text-[10px] text-slate-600 uppercase tracking-widest font-medium">
+                    © 2024 SMART CONSULTING ENG'G. ALL RIGHTS RESERVED.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Fixed Bottom Mobile CTA -->
+    <div class="fixed bottom-6 right-6 md:hidden z-50">
+        <button class="bg-primary text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center">
+            <span class="material-symbols-outlined">chat_bubble</span>
+        </button>
+    </div>
+    <!-- Script for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
