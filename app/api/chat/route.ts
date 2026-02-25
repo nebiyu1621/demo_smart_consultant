@@ -1,13 +1,14 @@
 import { google } from "@ai-sdk/google";
 import { streamText } from "ai";
 
-export const maxDuration = 30;
+export const runtime = 'edge';
+export const maxDuration = 60;
 
 export async function POST(req: Request) {
     const { messages } = await req.json();
 
     const result = await streamText({
-        model: google("gemini-flash-latest"),
+        model: google("gemini-1.5-flash"),
         system: `You are 'Civic', a Senior Civil Engineering Assistant for SMART Consulting Engineers PLC in Ethiopia. 
     Your full title is 'Civic: Your Senior Civil Engineering Assistant'.
     

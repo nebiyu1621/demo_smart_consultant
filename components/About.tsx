@@ -10,7 +10,7 @@ export default function About() {
                         <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                             <img
-                                src="/civil2.jpg"
+                                src="/about_engineering.png"
                                 alt="Engineering Legacy"
                                 className="w-full h-full object-cover transition-all duration-700"
                             />

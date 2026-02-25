@@ -1,17 +1,27 @@
 "use client";
 
-import { useChat } from "ai/react";
+import { useChat } from "@ai-sdk/react";
 import { useState, useRef, useEffect } from "react";
 import { MessageSquare, X, Send, Loader2, RotateCcw } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);
-    const { messages, input, handleInputChange, handleSubmit, isLoading, error, reload, append } = useChat({
+    const [chatInput, setChatInput] = useState("");
+    const { messages = [], status, error, reload, sendMessage } = useChat({
         onError: (err) => {
             console.error("Chat Component Error:", err);
         }
     });
+
+    const isLoading = status !== 'idle';
+
+    const handleFormSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!chatInput.trim() || isLoading) return;
+        sendMessage({ text: chatInput });
+        setChatInput("");
+    };
     const scrollRef = useRef<HTMLDivElement>(null);
 
     const quickActions = [
@@ -78,12 +88,12 @@ export default function Chatbot() {
                                 </div>
                             </div>
 
-                            {messages.length === 0 && (
+                            {(messages?.length ?? 0) === 0 && (
                                 <div className="grid grid-cols-1 gap-2 mt-4">
                                     {quickActions.map((action) => (
                                         <button
                                             key={action.label}
-                                            onClick={() => append({ role: 'user', content: action.query })}
+                                            onClick={() => sendMessage({ text: action.query })}
                                             className="text-left p-3 text-xs font-semibold text-primary border border-primary/20 rounded-xl bg-primary/5 hover:bg-primary/10 transition-all hover:border-primary/40 group flex items-center justify-between"
                                         >
                                             {action.label}
@@ -93,7 +103,7 @@ export default function Chatbot() {
                                 </div>
                             )}
 
-                            {messages.map((m) => (
+                            {messages?.map((m) => (
                                 <div key={m.id} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                                     <div className={`max-w-[85%] rounded-2xl p-3 text-sm ${m.role === 'user'
                                         ? 'bg-primary text-white rounded-tr-none'
@@ -131,17 +141,17 @@ export default function Chatbot() {
                         </div>
 
                         {/* Input Area */}
-                        <form onSubmit={handleSubmit} className="p-4 bg-slate-900/50 border-t border-white/10">
+                        <form onSubmit={handleFormSubmit} className="p-4 bg-slate-900/50 border-t border-white/10">
                             <div className="relative">
                                 <input
-                                    value={input}
-                                    onChange={handleInputChange}
+                                    value={chatInput}
+                                    onChange={(e) => setChatInput(e.target.value)}
                                     placeholder="Ask Civic..."
                                     className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-4 pr-12 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-600"
                                 />
                                 <button
                                     type="submit"
-                                    disabled={isLoading || !input.trim()}
+                                    disabled={isLoading || !chatInput?.trim()}
                                     className="absolute right-2 top-1.5 w-9 h-9 bg-primary text-white rounded-lg flex items-center justify-center disabled:opacity-50 disabled:bg-slate-700 transition-all hover:scale-105 active:scale-95"
                                 >
                                     <Send size={16} />
